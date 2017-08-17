@@ -6,6 +6,7 @@ services:
     links:
       - phpfpm
       - elasticsearch1
+      - db
     volumes:
       - ./public_html:/usr/local/apache2/htdocs/
       - ./conf/httpd.conf:/usr/local/apache2/conf/httpd.conf
@@ -27,6 +28,19 @@ services:
       static-network:
         ipv4_address: "${IPADDRESS}.6"
 
+   db:
+    image: mysql:latest
+    volumes:
+      - ./conf/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123
+      - MYSQL_DATABASE=dbname
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=123
+    networks:
+      static-network:
+        ipv4_address: "${IPADDRESS}.7"
+
    elasticsearch1:
     image: docker.elastic.co/elasticsearch/elasticsearch:5.4.3
     environment:
@@ -43,7 +57,7 @@ services:
       - 9200:9200
     networks:
       static-network:
-        ipv4_address: "${IPADDRESS}.7"
+        ipv4_address: "${IPADDRESS}.8"
 
    elasticsearch2:
     image: docker.elastic.co/elasticsearch/elasticsearch:5.4.3
@@ -60,7 +74,7 @@ services:
       - ./conf/elasticsearch2:/usr/share/elasticsearch/data
     networks:
       static-network:
-        ipv4_address: "${IPADDRESS}.8"
+        ipv4_address: "${IPADDRESS}.9"
 
 networks:
   static-network:
