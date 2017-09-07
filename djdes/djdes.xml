@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.2" type="plugin" group="content" method="upgrade">
+    <name>DJD Elastic Search</name>
+    <author>Joomla! Project</author>
+    <creationDate>January 2014</creationDate>
+    <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>admin@joomla.org</authorEmail>
+    <authorUrl>www.joomla.org</authorUrl>
+    <version>0.1</version>
+    <description>Voorbeeld plugin ElasticSearch</description>
+    <files>
+        <filename plugin="djdes">djdes.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="es_host"
+                        type="string"
+                        default="127.0.0.1:9200"
+                        label="Elastic Search Host"
+                />
+                <field
+                        name="es_user"
+                        type="string"
+                        default="elastic"
+                        label="Elastic Search Gebruikersnaam"
+                        description=""
+                />
+                <field
+                        name="es_pass"
+                        type="string"
+                        default="changeme"
+                        label="Elastic Search Wachtwoord"
+                        description=""
+                />
+                <field
+                        name="es_index"
+                        type="string"
+                        default="djd"
+                        label="Elastic Search Index"
+                        description=""
+                />
+            </fieldset>
+        </fields>
+
+    </config>
+</extension>
