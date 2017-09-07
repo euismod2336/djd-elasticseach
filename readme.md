@@ -17,23 +17,14 @@ In de root van je project
 Let erop dat de rechten zo staan ingesteld dat de container ook schrijfrechten heeft op de benodigde plekken (in elk geval is dat in de ./conf folder waar de database + elastic search data wordt opgeslagen)
 Het kan dus zijn dat je de boel even moet aanpassen en opnieuw opstarten.
 
-## Installatie
-### DB
-host: `db`<br />
-name: `dbname`<br />
-user: `Perfectweb Team`<br />
-pw: `224fxIgJ`
-
-Installeer met Test data indien gewenst. Verwijder de installatie folder na installatie. Als er geen `configuration.php` bestand aangemaakt is, kopieer die handmatig in de root en vul de correcte gegevens in.
-
-## Post-setup
-De plugin moet nog ontdekt en geactiveerd worden, deze is te vinden in `public_html/plugins/content/djdes`
+## Post-run
+Installeer de plugin in een werkende Joomla! installatie en configureer die. Alle standaard instellingen zouden goed moeten zijn.
 
 Na het opslaan van een artikel is die opgeslagen in de ElasticSearch.
 
 Als de content groep van plugins is ingeladen, kan met het event `onGetFromElasticSearch` in ElasticSearch gezocht worden (zie de plugin voor details)
 
-Daarnaast kan je handmatig naar het IP-adres gaan van de server (default: 192.168.13.8:9200) en daar via een GET de data bekijken (nadat een artikel is opgeslagen zou dat zijn: 192.168.13.8:9200/djd/_search). Ook kan je direct naar het opgeslagen artikel gaan door de ID ook in de url op te nemen.
+Daarnaast kan je handmatig naar het IP-adres gaan van de server (default: http://127.0.0.1:9200) en daar via een GET de data bekijken (nadat een artikel is opgeslagen zou dat zijn: http://127.0.0.1:9200/djd/_search). Ook kan je direct naar het opgeslagen artikel gaan door de ID ook in de url op te nemen.
 De opbouw van de urls is: {host}/{index}/{type}/{id|keyword}
 
 ## HTPasswd
