@@ -89,7 +89,7 @@ class PlgContentDJDES extends JPlugin
 	 */
 	private function call($url, $type = 'get', $data = array())
 	{
-		$endpoint = $this->params->get('es_host', '192.168.13.8:9200');
+		$endpoint = $this->params->get('es_host', '127.0.0.1:9200');
 
 		$url = implode('/',
 			array(
